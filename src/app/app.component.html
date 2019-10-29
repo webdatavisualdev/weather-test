@@ -1,21 +1,46 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container pt-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="form-group">
+        <select class="form-control" [(ngModel)]="city" (change)="changeCity()">
+          <option value="">Select a city</option>
+          <option *ngFor="let c of cities" [value]="c">{{c}}</option>
+        </select>
+      </div>
 
-<router-outlet></router-outlet>
+      <div class="mt-3" *ngIf="weather">
+        <p>Date: {{weather.date}}</p>
+        <p>Weather: {{weather.data}}</p>
+      </div>
+    </div>
+    
+    <div class="col-12 text-center mt-4">
+      <h3>RollDice</h3>
+      <button class="btn btn-success" (click)="rollDice()">{{dice}}</button>
+    </div>
+
+    <div class="col-12 mt-3">
+      <button class="btn btn-primary" (click)="testCase()">Test Case</button>
+      <div class="mt-3">
+        <ng-container *ngFor="let d of dices"> {{d}} </ng-container>
+      </div>
+    </div>
+
+    <div class="col-12 text-center mt-4">
+      <h3>Difference between binary and text files?</h3>
+      <ul class="text-left">
+        <li>Bits represent character in text but a custom data in binary.</li>
+        <li>Text less prone to get corrupt as changes reflect as soon as the file is opened and can easily be undone.<br>Binary can easily get corrupted, even a single bit change may corrupt the file.</li>
+        <li>Text can store only plain text in a file and binary can store different types of data (image, audio, text) in a single file.</li>
+        <li>Text widely used file format and can be opened using any simple text editor.<br>Binary developed especially for an application and may not be understood by other applications.</li>
+        <li>Mostly .txt and .rtf are used as extensions to text files and binary can have any application defined extension.</li>
+      </ul>
+    </div>
+
+    <div class="col-12 text-center mt-4">
+      <h3>Bonus Question</h3>
+      <p class="text-left">Because the train for west direction came 4 more times at first.</p>
+    </div>
+  </div>
+</div>

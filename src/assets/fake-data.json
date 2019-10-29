@@ -1,0 +1,14 @@
+{
+    "London": [
+        {"date": "2019-10-29", "data": "rain"},
+        {"date": "2019-10-28", "data": "windy"}
+    ],
+    "NY": [
+        {"date": "2019-10-27", "data": "cloudy"},
+        {"date": "2019-10-26", "data": "windy"}
+    ],
+    "Tokyo": [
+        {"date": "2019-10-29", "data": "rain"},
+        {"date": "2019-10-24", "data": "cloudy"}
+    ]
+}
